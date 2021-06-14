@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'Screens/drawer_screen.dart';
+import 'Screens/home_screen.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -29,11 +32,15 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      body: Stack(
+        children: [
+          DrawerScreen(),
+          HomeScreen(),
+        ],
+      ),
     );
   }
 }
