@@ -14,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   double xOffset = 0;
   double yOffset = 0;
-  double scaleFactor = 1;// help to reduce the screen size
+  double scaleFactor = 1; // help to reduce the screen size
   bool isDrawerOpenOrClose = false;
 
   @override
@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       transform: Matrix4.translationValues(xOffset, yOffset, 0)
         ..scale(scaleFactor),
       duration: Duration(milliseconds: 250), // best for any animation
-      color: Colors.white,
+      color: Colors.grey[200],
       // column that the whole screen is a column
       child: Column(
         children: [
@@ -41,10 +41,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         icon: Icon(Icons.arrow_back_ios),
                         onPressed: () {
                           setState(() {
-                            xOffset=0;
-                            yOffset=0;
-                            scaleFactor=1;
-                            isDrawerOpenOrClose=false;
+                            xOffset = 0;
+                            yOffset = 0;
+                            scaleFactor = 1;
+                            isDrawerOpenOrClose = false;
                           });
                         },
                       )
@@ -77,7 +77,106 @@ class _HomeScreenState extends State<HomeScreen> {
                 CircleAvatar(),
               ],
             ),
-          )
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            margin: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Icon(Icons.search),
+                // TextField(
+                // ),
+                Text("Search for pet Here"),
+                IconButton(
+                  icon: Icon(Icons.filter_list),
+                  onPressed: () {
+                    print("Helo");
+                  },
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 5, right: 5),
+            height: 120,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: categories.length,
+              // categories from the confrigration file
+              itemBuilder: (context, index) {
+                return Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        margin: EdgeInsets.only(left: 10, right: 10),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          boxShadow:
+                              shadowList, // shadowList from the confriguation file
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Image.asset(
+                          categories[index]['iconPath'],
+                          height: 50,
+                          width: 50,
+                          color: Colors.grey[700],
+                        ),
+                      ),
+                      Text(categories[index]['name']),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+
+          // cat pop out
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            height: 240,
+            child: Row(
+              children: [
+                // Expanded Widget is used for the equal height for every one side
+                Expanded(
+                  child: Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.blueGrey[300],
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: shadowList,
+                        ),
+                        margin: EdgeInsets.only(top: 50),
+                      ),
+                      Align(
+                        child: Image.asset("images/pet-cat2.png"),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.only(top: 70, bottom: 20),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
