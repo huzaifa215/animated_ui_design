@@ -1,8 +1,7 @@
 import 'package:animated_ui/Screens/DetailScreen.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-import '../confriguation.dart';
 import '../confriguation.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -95,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   // ),
                   Text("Search for pet Here"),
                   IconButton(
-                    icon: Icon(Icons.filter_list),
+                    icon: Icon(Icons.filter_alt_outlined),
                     onPressed: () {
                       print("Helo");
                     },
