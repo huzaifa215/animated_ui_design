@@ -53,12 +53,15 @@ class _DetailScreenState extends State<DetailScreen> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 20),
+            margin: EdgeInsets.only(top: 40),
             child: Align(
               alignment: Alignment.topCenter,
-              child: Image.asset(
-                "images/pet-cat2.png",
-                height: 250,
+              child: Hero(
+                tag: 1, // should me unique and pass by previous scren
+                child: Image.asset(
+                  "images/pet-cat2.png",
+                  height: 250,
+                ),
               ),
             ),
           ),
@@ -76,16 +79,70 @@ class _DetailScreenState extends State<DetailScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 150,
+             // margin: EdgeInsets.symmetric(horizontal: 20),
+              height: 140,
               decoration: BoxDecoration(
                 color: Colors.grey[200],
                 borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(40),
-                    topLeft: Radius.circular(40)),
+                    topRight: Radius.circular(60),
+                    topLeft: Radius.circular(60)),
               ),
-              
             ),
           ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              height: 140,
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(60),
+                    topLeft: Radius.circular(60)),
+              ),
+              child: Row(
+                children: [
+                  Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                      color: primaryColor,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.favorite_border,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: primaryColor,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "Adoption",
+                          style: TextStyle(
+                            fontSize: 24,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
         ],
       ),
     );
