@@ -10,10 +10,19 @@ List<BoxShadow> shadowList = [
   ),
 ];
 
-List<Map> categories=[
-  {'name':'Cats','iconPath':'images/cat.png'},
-  {'name':'Doges','iconPath':'images/dog.png'},
-  {'name':'Bunnies','iconPath':'images/rabbit.png'},
-  {'name':'Parrots','iconPath':'images/parrot.png'},
-  {'name':'Horses','iconPath':'images/horse.png'},
+List<Map> categories = [
+  {'name': 'Cats', 'iconPath': 'images/cat.png'},
+  {'name': 'Doges', 'iconPath': 'images/dog.png'},
+  {'name': 'Bunnies', 'iconPath': 'images/rabbit.png'},
+  {'name': 'Parrots', 'iconPath': 'images/parrot.png'},
+  {'name': 'Horses', 'iconPath': 'images/horse.png'},
+];
+
+// Drawer Map
+List<Map> drawerItem = [
+  {'icon': Icons.adb, 'title': 'Adoption'},
+  {'icon': Icons.money, 'title': 'Donation'},
+  {'icon': Icons.add, 'title': 'Add Pet'},
+  {'icon': Icons.favorite, 'title': 'Favourite'},
+  {'icon': Icons.mail, 'title': 'Messages'},
 ];

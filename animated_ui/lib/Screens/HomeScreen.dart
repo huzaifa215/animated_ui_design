@@ -24,8 +24,13 @@ class _HomeScreenState extends State<HomeScreen> {
       transform: Matrix4.translationValues(xOffset, yOffset, 0)
         ..scale(scaleFactor),
       duration: Duration(milliseconds: 250), // best for any animation
-      color: Colors.grey[200],
+
       // column that the whole screen is a column
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(isDrawerOpenOrClose?40:0.0),
+        color: Colors.grey[200],
+
+      ),
       child: SingleChildScrollView(
         child: Column(
           children: [
