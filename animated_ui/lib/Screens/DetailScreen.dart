@@ -1,4 +1,4 @@
-import 'package:animated_ui/confriguation.dart';
+import 'package:animated_ui/Confriguation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

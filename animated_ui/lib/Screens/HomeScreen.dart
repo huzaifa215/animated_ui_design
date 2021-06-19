@@ -2,7 +2,7 @@ import 'package:animated_ui/Screens/DetailScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../confriguation.dart';
+import '../Confriguation.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key key}) : super(key: key);
