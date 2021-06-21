@@ -1,6 +1,6 @@
 import 'package:animated_ui/Confriguation.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class DrawerScreen extends StatefulWidget {
   const DrawerScreen({Key key}) : super(key: key);
@@ -14,7 +14,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
   Widget build(BuildContext context) {
     return Container(
       color: primaryColor,
-      padding: EdgeInsets.only(top: 50),
+      padding: EdgeInsets.only(top: 60,bottom: 50),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -28,7 +28,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Sunny Leone",
+                    "Susrike",
                     style: TextStyle(
                       fontSize: 20,
                       color: Colors.white,
@@ -47,8 +47,29 @@ class _DrawerScreenState extends State<DrawerScreen> {
             ],
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [],
+
+            children: drawerItem
+                .map((data) => Padding(
+              padding: const EdgeInsets.all(10),
+                  child: Row(
+                        children: [
+                          Icon(
+                            data['icon'],
+                            color: Colors.grey[300],
+                            size: 30,
+                          ),
+                          SizedBox(width: 20,),
+                          Text(
+                            data['title'],
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Color(0xA4FFFFFF)
+                            ),
+                          ),
+                        ],
+                      ),
+                ))
+                .toList(),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
