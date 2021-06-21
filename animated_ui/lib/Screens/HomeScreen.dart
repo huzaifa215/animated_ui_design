@@ -27,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // column that the whole screen is a column
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(isDrawerOpenOrClose?40:0.0),
+        borderRadius: BorderRadius.circular(isDrawerOpenOrClose?40:1),
         color: Colors.grey[200],
 
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Color primaryColor = Color(0xff416d6d);
 List<BoxShadow> shadowList = [
@@ -20,9 +21,10 @@ List<Map> categories = [
 
 // Drawer Map
 List<Map> drawerItem = [
-  {'icon': Icons.adb, 'title': 'Adoption'},
-  {'icon': Icons.money, 'title': 'Donation'},
-  {'icon': Icons.add, 'title': 'Add Pet'},
+  {'icon': FontAwesomeIcons.paw, 'title': 'Adoption'},
+  {'icon': FontAwesomeIcons.mailBulk, 'title': 'Donation'},
+  {'icon': FontAwesomeIcons.plus, 'title': 'Add sPet'},
   {'icon': Icons.favorite, 'title': 'Favourite'},
   {'icon': Icons.mail, 'title': 'Messages'},
+  {'icon': FontAwesomeIcons.userAlt, 'title': 'Profile'},
 ];
