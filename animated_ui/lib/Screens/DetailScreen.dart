@@ -1,6 +1,9 @@
 import 'package:animated_ui/Confriguation.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'CurvedNavigatorBar.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen({Key key}) : super(key: key);
@@ -79,7 +82,7 @@ class _DetailScreenState extends State<DetailScreen> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-             // margin: EdgeInsets.symmetric(horizontal: 20),
+              // margin: EdgeInsets.symmetric(horizontal: 20),
               height: 140,
               decoration: BoxDecoration(
                 color: Colors.grey[200],
@@ -128,11 +131,21 @@ class _DetailScreenState extends State<DetailScreen> {
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Center(
-                        child: Text(
-                          "Adoption",
-                          style: TextStyle(
-                            fontSize: 24,
-                            color: Colors.white,
+                        child: GestureDetector(
+                          onTap:(){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => CurvesNavigatorBar() ,
+                              ),
+                            );
+                          },
+                          child: Text(
+                            "Adoption",
+                            style: TextStyle(
+                              fontSize: 24,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
@@ -142,7 +155,6 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
             ),
           ),
-
         ],
       ),
     );

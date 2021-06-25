@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return AnimatedContainer(
       // to toggle your container that container shifted
       transform: Matrix4.translationValues(xOffset, yOffset, 0)
-        ..scale(scaleFactor),
+        ..scale(scaleFactor)..rotateY(isDrawerOpenOrClose? -0.5:0),
       duration: Duration(milliseconds: 250), // best for any animation
 
       // column that the whole screen is a column
@@ -39,6 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20),
+              decoration: BoxDecoration(),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

@@ -1,3 +1,4 @@
+import 'package:animated_ui/Screens/CurvedNavigatorBar.dart';
 import 'package:flutter/material.dart';
 import 'Screens/DrawerScreen.dart';
 import 'Screens/HomeScreen.dart';
@@ -29,6 +30,7 @@ class MyHomePage extends StatelessWidget {
         children: [
           DrawerScreen(),
           HomeScreen(),
+          // CurvesNavigatorBar(),
         ],
       ),
     );
